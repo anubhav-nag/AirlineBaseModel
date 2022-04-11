@@ -23,6 +23,21 @@ public class Flight {
 	
 	@Column(name="flight_no")
 	private String flightNo;
+	
+	// default constructor
+
+	public Flight() {
+	
+	}
+	
+	// constrcutor with fields
+
+	public Flight(String airline, String flightNo) {
+		this.airline = airline;
+		this.flightNo = flightNo;
+	}
+
+
 
 	public int getId() {
 		return id;
