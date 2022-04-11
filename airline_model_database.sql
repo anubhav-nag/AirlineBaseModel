@@ -12,7 +12,13 @@ create table flights (
     primary key(id) 
 );
 
-
+create table flight_fare (
+	id int not null auto_increment,
+    class varchar(255) not null,
+    fare int not null,
+    is_refundable boolean not null,
+    primary key(id)
+);
 
 create table flight_routes (
 	id int not null auto_increment,
@@ -25,12 +31,4 @@ create table flight_routes (
 	constraint primary key(id),
     foreign key(flight_id) references flights(id),
     foreign key(fare_id) references flight_fare(id)
-);
-
-create table flight_fare (
-	id int not null auto_increment,
-    class varchar(255) not null,
-    fare int not null,
-    is_refundable boolean not null,
-    primary key(id)
 );
