@@ -32,3 +32,6 @@ create table flight_routes (
     foreign key(flight_id) references flights(id),
     foreign key(fare_id) references flight_fare(id)
 );
+
+insert into flights
+Values(1, "Air India", "AI100");
