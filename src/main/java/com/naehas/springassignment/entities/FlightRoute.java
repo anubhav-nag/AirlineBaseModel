@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="flights")
+@Table(name="flight_routes")
 public class FlightRoute {
 
 	// added all columns of flight_routes table
