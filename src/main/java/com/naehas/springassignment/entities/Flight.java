@@ -21,7 +21,7 @@ public class Flight {
 	@Column(name="airline")
 	private String airline;
 	
-	@Column(name="flight_No")
+	@Column(name="flight_no")
 	private String flightNo;
 
 	public int getId() {
