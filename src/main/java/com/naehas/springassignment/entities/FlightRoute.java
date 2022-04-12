@@ -1,10 +1,15 @@
 package com.naehas.springassignment.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -36,6 +41,18 @@ public class FlightRoute {
 	@Column(name="fare_id")
 	private int fareId;
 
+	@OneToOne(fetch=FetchType.LAZY,cascade={CascadeType.MERGE,CascadeType.DETACH,
+			CascadeType.REFRESH,CascadeType.PERSIST})
+	@JoinColumn(name="fare_id")
+	private FlightFare flightFare;
+	
+	
+    
+    @OneToOne(fetch=FetchType.LAZY,cascade={CascadeType.MERGE,CascadeType.DETACH,
+			CascadeType.REFRESH,CascadeType.PERSIST})
+	@JoinColumn(name="flight_id")
+	private Flight flight;
+	
 	// default construcutor
 	
 	public FlightRoute() {
