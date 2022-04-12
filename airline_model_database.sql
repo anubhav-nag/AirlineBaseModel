@@ -33,5 +33,5 @@ create table flight_routes (
     foreign key(fare_id) references flight_fare(id)
 );
 
-insert into flights
-Values(1, "Air India", "AI100");
+-- insert into flights
+-- Values(1, "Air India", "AI100");

@@ -68,7 +68,7 @@ public class FlightRestController {
 	}
 	
 	// deleteing an existing Flight by id
-	@DeleteMapping("/flights/{flightId")
+	@DeleteMapping("/flights/{flightId}")
 	public String deleteFlight(@PathVariable int flightId) {
 		
 		Flight flight = flightService.findById(flightId); 
