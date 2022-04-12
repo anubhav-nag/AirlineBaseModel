@@ -28,13 +28,13 @@ public class FlightFareRestController {
 	
 	// finding all flight Fares in Flight Fare Table
 	
-	@GetMapping("/flight_fares")
+	@GetMapping("/flight_fare")
 	public List<FlightFare> findAll(){
 		return flightFareService.findAll();
 	}
 	
 	// finding flight Fare details by flightId
-	@GetMapping("/flight_fares/{flightFareId}")
+	@GetMapping("/flight_fare/{flightFareId}")
 	public FlightFare getFlightFare(@PathVariable int flightFareId) {
 		
 		FlightFare theFlightFare = flightFareService.findById(flightFareId);
@@ -47,7 +47,7 @@ public class FlightFareRestController {
 	}
 	
 	// adding new flight Fare details
-	@PostMapping("/flight_fares")
+	@PostMapping("/flight_fare")
 	public FlightFare addflightFare(@RequestBody FlightFare theFlightFare) {
 		
 		theFlightFare.setId(0);
@@ -59,7 +59,7 @@ public class FlightFareRestController {
 	}
 	
 	// updation on an existing flight Fare details
-	@PutMapping("/flight_fares")
+	@PutMapping("/flight_fare")
 	public FlightFare updateFlightFare(@RequestBody FlightFare theFlightFare) {
 	
 		flightFareService.save(theFlightFare);
@@ -68,7 +68,7 @@ public class FlightFareRestController {
 	}
 	
 	// deleteing an existing Flight Fare by id
-	@DeleteMapping("/flight_fares/{flightFareId}")
+	@DeleteMapping("/flight_fare/{flightFareId}")
 	public String deleteFlightFare(@PathVariable int flightFareId) {
 		
 		FlightFare theFlightFare = flightFareService.findById(flightFareId); 
