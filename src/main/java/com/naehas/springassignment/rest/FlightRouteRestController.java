@@ -79,8 +79,7 @@ private FlightRouteService flightRouteService;
 		
 		flightRouteService.deleteById(flightRouteId);
 		
-		return "Deleted the flight id- " + flightRouteId;
+		return "Deleted the Flight Route id- " + flightRouteId;
 	}
 	
-
 }
