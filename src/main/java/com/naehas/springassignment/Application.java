@@ -1,4 +1,4 @@
-package com.naehas.springassignment.application;
+package com.naehas.springassignment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

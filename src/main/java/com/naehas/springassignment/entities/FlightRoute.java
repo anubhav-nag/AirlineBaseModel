@@ -35,11 +35,11 @@ public class FlightRoute {
 	@Column(name="arrive_on")
 	private String arriveOn;
 	
-	@Column(name="flight_id")
-	private int flightId;
-	
-	@Column(name="fare_id")
-	private int fareId;
+//	@Column(name="flight_id")
+//	private int flightId;
+//	
+//	@Column(name="fare_id")
+//	private int fareId;
 
 	@OneToOne(fetch=FetchType.LAZY,cascade={CascadeType.MERGE,CascadeType.DETACH,
 			CascadeType.REFRESH,CascadeType.PERSIST})
@@ -61,14 +61,11 @@ public class FlightRoute {
 	
 	// constructor with fields
 
-	public FlightRoute(String departureLocation, String arrivalLocation, String departOn, String arriveOn, int flightId,
-			int fareId) {
+	public FlightRoute(String departureLocation, String arrivalLocation, String departOn, String arriveOn) {
 		this.departureLocation = departureLocation;
 		this.arrivalLocation = arrivalLocation;
 		this.departOn = departOn;
 		this.arriveOn = arriveOn;
-		this.flightId = flightId;
-		this.fareId = fareId;
 	}
 
 
@@ -113,27 +110,26 @@ public class FlightRoute {
 		this.arriveOn = arriveOn;
 	}
 
-	public int getFlightId() {
-		return flightId;
-	}
-
-	public void setFlightId(int flightId) {
-		this.flightId = flightId;
-	}
-
-	public int getFareId() {
-		return fareId;
-	}
-
-	public void setFareId(int fareId) {
-		this.fareId = fareId;
-	}
+//	public int getFlightId() {
+//		return flightId;
+//	}
+//
+//	public void setFlightId(int flightId) {
+//		this.flightId = flightId;
+//	}
+//
+//	public int getFareId() {
+//		return fareId;
+//	}
+//
+//	public void setFareId(int fareId) {
+//		this.fareId = fareId;
+//	}
 
 	@Override
 	public String toString() {
 		return "FlightRoute [id=" + id + ", departureLocation=" + departureLocation + ", arrivalLocation="
-				+ arrivalLocation + ", departOn=" + departOn + ", arriveOn=" + arriveOn + ", flightId=" + flightId
-				+ ", fareId=" + fareId + "]";
+				+ arrivalLocation + ", departOn=" + departOn + ", arriveOn=" + arriveOn +  "]";
 	}
 
 	
