@@ -13,5 +13,7 @@ public interface FlightRouteService {
 	public void save(FlightRoute flightRoute);
 	
 	public void deleteById(int flightRouteId);
+
+	public List<FlightRoute> searchFlightRoutes(String keyword);
 	
 }

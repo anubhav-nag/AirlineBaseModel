@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.naehas.springassignment.entities.FlightRoute;
@@ -81,5 +82,25 @@ private FlightRouteService flightRouteService;
 		
 		return "Deleted the Flight Route id- " + flightRouteId;
 	}
+	
+	// search according to the params : departure location, arrival location, date of departure
+	
+//	@GetMapping("/flightRoutes/searchBar")
+//    public List<FlightRoute> searchCustomers(@RequestParam("departureLocation") String departureLocation,
+//    		@RequestParam("arrivalLocation") String arrivalLocation,
+//    		@RequestParam("departOn") String departOn) {
+//        
+//		List<FlightRoute> theFlightRoutes = flightRouteService.searchFlightRoutes(departureLocation, arrivalLocation, departOn);
+//               
+//        return theFlightRoutes;        
+//    }
+	
+	@GetMapping("/flightRoutes/searchBar")
+    public List<FlightRoute> searchCustomers(@RequestParam("keyword") String keyword) {
+        
+		List<FlightRoute> theFlightRoutes = flightRouteService.searchFlightRoutes(keyword);
+               
+        return theFlightRoutes;        
+    }
 	
 }

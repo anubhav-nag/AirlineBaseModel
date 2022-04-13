@@ -51,4 +51,12 @@ public class FlightRouteServiceImplementation implements FlightRouteService {
 		flightRouteRepository.deleteById(flightRouteId);
 	}
 
+	@Override
+	public List<FlightRoute> searchFlightRoutes(String keyword) {
+		if (keyword != null) {
+            return flightRouteRepository.search(keyword);
+        }
+		return flightRouteRepository.findAll();
+	}
+
 }
