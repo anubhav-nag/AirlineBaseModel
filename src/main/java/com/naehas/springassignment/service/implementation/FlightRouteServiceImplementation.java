@@ -59,4 +59,15 @@ public class FlightRouteServiceImplementation implements FlightRouteService {
 		return flightRouteRepository.findAll();
 	}
 
+	@Override
+	public List<FlightRoute> findAllByOrderBydepartOnAsc() {
+		return flightRouteRepository.findAllByOrderBydepartOnAsc();
+	}
+
+	@Override
+	public List<FlightRoute> findAllByOrderBydepartOnDesc() {
+		
+		return flightRouteRepository.findAllByOrderBydepartOnDesc();
+	}
+
 }

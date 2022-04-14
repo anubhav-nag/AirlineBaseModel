@@ -82,5 +82,13 @@ public class FlightFareRestController {
 		return "Deleted the Flight Fare id- " + flightFareId;
 	}
 	
-
+	@GetMapping("/flight_fare/sortByFare")
+	public List<FlightFare> sortAsc(){
+		return flightFareService.findAllByOrderByFareAsc();
+	}
+	
+	@GetMapping("/flight_fare/sortByFareDesc")
+	public List<FlightFare> sortDesc(){
+		return flightFareService.findAllByOrderByFareDesc();
+	}
 }

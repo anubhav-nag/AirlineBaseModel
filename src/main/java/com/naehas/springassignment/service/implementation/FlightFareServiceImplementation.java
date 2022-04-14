@@ -51,4 +51,14 @@ public class FlightFareServiceImplementation implements FlightFareService {
 		flightFareRepository.deleteById(flightFareId);
 	}
 
+	@Override
+	public List<FlightFare> findAllByOrderByFareAsc() {
+		return flightFareRepository.findAllByOrderByFareAsc();
+	}
+
+	@Override
+	public List<FlightFare> findAllByOrderByFareDesc() {
+		return flightFareRepository.findAllByOrderByFareDesc();
+	}
+
 }

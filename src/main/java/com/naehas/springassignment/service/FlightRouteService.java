@@ -16,4 +16,8 @@ public interface FlightRouteService {
 
 	public List<FlightRoute> searchFlightRoutes(String keyword);
 	
+	public List<FlightRoute> findAllByOrderBydepartOnAsc();
+	
+	public List<FlightRoute> findAllByOrderBydepartOnDesc();
+	
 }

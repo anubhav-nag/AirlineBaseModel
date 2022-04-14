@@ -13,4 +13,8 @@ public interface FlightFareService {
 	public void save(FlightFare flightFare);
 	
 	public void deleteById(int flightFareId);
+	
+	public List<FlightFare> findAllByOrderByFareAsc();
+	
+	public List<FlightFare> findAllByOrderByFareDesc();
 }

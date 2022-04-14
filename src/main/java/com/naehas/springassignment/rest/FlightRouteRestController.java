@@ -95,12 +95,21 @@ private FlightRouteService flightRouteService;
 //        return theFlightRoutes;        
 //    }
 	
-	@GetMapping("/flight_routes/searchBar")
-    public List<FlightRoute> searchCustomers(@RequestParam("keyword") String keyword) {
+	@GetMapping("/flight_routes/search")
+    public List<FlightRoute> search(@RequestParam("keyword") String keyword) {
         
 		List<FlightRoute> theFlightRoutes = flightRouteService.searchFlightRoutes(keyword);
                
         return theFlightRoutes;        
     }
 	
+	@GetMapping("/flight_routes/sortBydepartOn")
+	public List<FlightRoute> sortAsc(){
+		return flightRouteService.findAllByOrderBydepartOnAsc();
+	}
+	
+	@GetMapping("/flight_routes/sortBydepartOnDesc")
+	public List<FlightRoute> sortDesc(){
+		return flightRouteService.findAllByOrderBydepartOnDesc();
+	}
 }

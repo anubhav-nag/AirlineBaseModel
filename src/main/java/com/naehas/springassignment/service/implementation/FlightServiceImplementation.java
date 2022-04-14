@@ -52,4 +52,7 @@ public class FlightServiceImplementation implements FlightService {
 		flightRepository.deleteById(flightId);
 	}
 
+	public List<Flight> findAirline(String airline){
+		return flightRepository.findAirline(airline);
+	}
 }
