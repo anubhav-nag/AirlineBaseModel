@@ -1,7 +1,5 @@
 package com.naehas.springassignment.entities;
 
-import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,7 +27,7 @@ public class Flight {
 	@Column(name="flight_no")
 	private String flightNo;
 	
-	@OneToOne(mappedBy="flight",fetch=FetchType.LAZY,cascade=CascadeType.ALL) 
+	@OneToOne(mappedBy="flight",fetch=FetchType.LAZY,cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}) 
 	private FlightRoute flightRoute;
 	
 	// default constructor

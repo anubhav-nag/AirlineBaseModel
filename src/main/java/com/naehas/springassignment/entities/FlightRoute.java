@@ -48,8 +48,7 @@ public class FlightRoute {
 	
 	
     
-    @OneToOne(fetch=FetchType.LAZY,cascade={CascadeType.MERGE,CascadeType.DETACH,
-			CascadeType.REFRESH,CascadeType.PERSIST})
+    @OneToOne(fetch=FetchType.LAZY,cascade = CascadeType.ALL)
 	@JoinColumn(name="flight_id")
 	private Flight flight;
 	

@@ -1,5 +1,7 @@
 package com.naehas.springassignment.entities;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,7 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -30,8 +32,8 @@ public class FlightFare {
 	@Column(name="is_refundable")
 	private boolean isRefundable;
 	
-	@OneToOne(mappedBy="flightFare",fetch=FetchType.LAZY,cascade=CascadeType.ALL) 
-	private FlightRoute flightRoute;
+	@OneToMany(mappedBy="flightFare",fetch=FetchType.LAZY,cascade=CascadeType.ALL) 
+	private List<FlightRoute> flightRoute;
 
 	// default constructor
 	
