@@ -11,8 +11,8 @@ import com.naehas.springassignment.entities.FlightRoute;
 public interface FlightRouteRepository extends JpaRepository<FlightRoute, Integer> {
 	
 	@Query("SELECT flightRoute FROM FlightRoute flightRoute WHERE flightRoute.departureLocation = :departureLocation"
-            + " OR flightRoute.arrivalLocation = :arrivalLocation"
-            + " OR flightRoute.departOn = :departOn" )
+            + " AND flightRoute.arrivalLocation = :arrivalLocation"
+            + " AND flightRoute.departOn = :departOn" )
 	public List<FlightRoute> search(@Param("departureLocation") String departureLocation,
 									@Param("arrivalLocation") String arrivalLocation,
 									@Param("departOn") String departOn);
