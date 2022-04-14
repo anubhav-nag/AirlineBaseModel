@@ -32,7 +32,7 @@ public class FlightFare {
 	@Column(name="is_refundable")
 	private boolean isRefundable;
 	
-	@OneToOne(fetch=FetchType.LAZY,cascade=CascadeType.ALL) 
+	@OneToOne(mappedBy="flightFare",fetch=FetchType.LAZY,cascade=CascadeType.ALL) 
 	private FlightRoute flightRoute;
 
 	// default constructor

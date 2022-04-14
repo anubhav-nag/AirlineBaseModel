@@ -29,7 +29,7 @@ public class Flight {
 	@Column(name="flight_no")
 	private String flightNo;
 	
-	@OneToOne(fetch=FetchType.LAZY,cascade=CascadeType.ALL) 
+	@OneToOne(mappedBy="flight",fetch=FetchType.LAZY,cascade=CascadeType.ALL) 
 	private FlightRoute flightRoute;
 	
 	// default constructor

@@ -26,8 +26,8 @@ create table flight_routes (
     arrival_location varchar(255) not null,
     departs_on varchar(255) not null,
     arrive_on varchar(255) not null,
-    flight_id int not null,
-    fare_id int not null,
+    flight_id int default null,
+    fare_id int default null,
 	constraint primary key(id),
     foreign key(flight_id) references flights(id),
     foreign key(fare_id) references flight_fare(id)

@@ -95,7 +95,7 @@ private FlightRouteService flightRouteService;
 //        return theFlightRoutes;        
 //    }
 	
-	@GetMapping("/flightRoutes/searchBar")
+	@GetMapping("/flight_routes/searchBar")
     public List<FlightRoute> searchCustomers(@RequestParam("keyword") String keyword) {
         
 		List<FlightRoute> theFlightRoutes = flightRouteService.searchFlightRoutes(keyword);
