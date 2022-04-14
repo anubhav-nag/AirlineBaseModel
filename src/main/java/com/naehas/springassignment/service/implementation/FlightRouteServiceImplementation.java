@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import com.naehas.springassignment.dao.FlightRouteRepository;
@@ -52,11 +53,17 @@ public class FlightRouteServiceImplementation implements FlightRouteService {
 	}
 
 	@Override
-	public List<FlightRoute> searchFlightRoutes(String keyword) {
-		if (keyword != null) {
-            return flightRouteRepository.search(keyword);
-        }
-		return flightRouteRepository.findAll();
+	public List<FlightRoute> searchFlightRoutes(String departureLocation, String arrivalLocation,String departOn) {
+		if(departureLocation == null) {
+			throw new RuntimeException("departureLocation missing");
+		}
+		else if(arrivalLocation == null) {
+			throw new RuntimeException("arrivalLocation missing");
+		}
+		else if(departOn == null) {
+			throw new RuntimeException("Departing time is missing");
+		}
+		return flightRouteRepository.search(departureLocation, arrivalLocation, departOn);
 	}
 
 	@Override

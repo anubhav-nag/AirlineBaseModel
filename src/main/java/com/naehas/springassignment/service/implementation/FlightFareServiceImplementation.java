@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.naehas.springassignment.dao.FlightFareRepository;
+import com.naehas.springassignment.entities.Flight;
 import com.naehas.springassignment.entities.FlightFare;
 import com.naehas.springassignment.service.FlightFareService;
 
@@ -59,6 +60,16 @@ public class FlightFareServiceImplementation implements FlightFareService {
 	@Override
 	public List<FlightFare> findAllByOrderByFareDesc() {
 		return flightFareRepository.findAllByOrderByFareDesc();
+	}
+
+	@Override
+	public List<FlightFare> uptoFare(int fare) {
+		return flightFareRepository.uptoFare(fare);
+	}
+
+	@Override
+	public List<FlightFare> flightisRefundable(boolean refundable) {
+		return flightFareRepository.flightisRefundable(refundable);
 	}
 
 }

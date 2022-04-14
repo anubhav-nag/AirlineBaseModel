@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.naehas.springassignment.entities.Flight;
 import com.naehas.springassignment.entities.FlightFare;
 import com.naehas.springassignment.service.FlightFareService;
 
@@ -90,5 +92,15 @@ public class FlightFareRestController {
 	@GetMapping("/flight_fare/sortByFareDesc")
 	public List<FlightFare> sortDesc(){
 		return flightFareService.findAllByOrderByFareDesc();
+	}
+	
+	@GetMapping("/flight_fare/uptoFare")
+	public List<FlightFare> uptoFare(@RequestParam int fare){
+		return flightFareService.uptoFare(fare);
+	}
+	
+	@GetMapping("/flight_fare/isRefundable")
+	public List<FlightFare> flightisRefundable(@RequestParam boolean refund){
+		return flightFareService.flightisRefundable(refund);
 	}
 }

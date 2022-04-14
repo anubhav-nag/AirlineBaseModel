@@ -4,16 +4,18 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
-import com.naehas.springassignment.entities.FlightFare;
 import com.naehas.springassignment.entities.FlightRoute;
 
 public interface FlightRouteRepository extends JpaRepository<FlightRoute, Integer> {
 	
-	@Query("SELECT flightRoute FROM FlightRoute flightRoute WHERE flightRoute.departureLocation LIKE %?1%"
-            + " OR flightRoute.arrivalLocation LIKE %?1%"
-            + " OR flightRoute.departOn LIKE %?1%" )
-	public List<FlightRoute> search(String keyword);
+	@Query("SELECT flightRoute FROM FlightRoute flightRoute WHERE flightRoute.departureLocation = :departureLocation"
+            + " OR flightRoute.arrivalLocation = :arrivalLocation"
+            + " OR flightRoute.departOn = :departOn" )
+	public List<FlightRoute> search(@Param("departureLocation") String departureLocation,
+									@Param("arrivalLocation") String arrivalLocation,
+									@Param("departOn") String departOn);
 
 	@Query("SELECT flightRoute FROM FlightRoute flightRoute ORDER BY flightRoute.departOn ")
 	public List<FlightRoute> findAllByOrderBydepartOnAsc();

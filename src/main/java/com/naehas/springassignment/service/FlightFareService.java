@@ -17,4 +17,8 @@ public interface FlightFareService {
 	public List<FlightFare> findAllByOrderByFareAsc();
 	
 	public List<FlightFare> findAllByOrderByFareDesc();
+	
+	public List<FlightFare> uptoFare(int fare);
+	
+	public List<FlightFare> flightisRefundable(boolean refundable);
 }

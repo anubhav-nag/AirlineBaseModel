@@ -2,6 +2,8 @@ package com.naehas.springassignment.service;
 
 import java.util.List;
 
+import org.springframework.data.repository.query.Param;
+
 import com.naehas.springassignment.entities.FlightRoute;
 
 public interface FlightRouteService {
@@ -14,7 +16,7 @@ public interface FlightRouteService {
 	
 	public void deleteById(int flightRouteId);
 
-	public List<FlightRoute> searchFlightRoutes(String keyword);
+	public List<FlightRoute> searchFlightRoutes(String departureLocation,String arrivalLocation,String departOn);
 	
 	public List<FlightRoute> findAllByOrderBydepartOnAsc();
 	

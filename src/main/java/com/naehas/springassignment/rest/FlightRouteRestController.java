@@ -85,23 +85,23 @@ private FlightRouteService flightRouteService;
 	
 	// search according to the params : departure location, arrival location, date of departure
 	
-//	@GetMapping("/flightRoutes/searchBar")
-//    public List<FlightRoute> searchCustomers(@RequestParam("departureLocation") String departureLocation,
-//    		@RequestParam("arrivalLocation") String arrivalLocation,
-//    		@RequestParam("departOn") String departOn) {
-//        
-//		List<FlightRoute> theFlightRoutes = flightRouteService.searchFlightRoutes(departureLocation, arrivalLocation, departOn);
-//               
-//        return theFlightRoutes;        
-//    }
-	
 	@GetMapping("/flight_routes/search")
-    public List<FlightRoute> search(@RequestParam("keyword") String keyword) {
+    public List<FlightRoute> searchFlightRoutes(@RequestParam("departureLocation") String departureLocation,
+    		@RequestParam("arrivalLocation") String arrivalLocation,
+    		@RequestParam("departOn") String departOn) {
         
-		List<FlightRoute> theFlightRoutes = flightRouteService.searchFlightRoutes(keyword);
+		List<FlightRoute> theFlightRoutes = flightRouteService.searchFlightRoutes(departureLocation, arrivalLocation, departOn);
                
         return theFlightRoutes;        
     }
+	
+//	@GetMapping("/flight_routes/search")
+//    public List<FlightRoute> searchFlightRoutes(@RequestParam("keyword") String keyword) {
+//        
+//		List<FlightRoute> theFlightRoutes = flightRouteService.searchFlightRoutes(keyword);
+//               
+//        return theFlightRoutes;        
+//    }
 	
 	@GetMapping("/flight_routes/sortBydepartOn")
 	public List<FlightRoute> sortAsc(){
